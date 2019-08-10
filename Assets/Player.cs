@@ -51,4 +51,5 @@ public class Player : MonoBehaviour
         float ChangeinPosX = transform.localPosition.x + offsetX;
         transform.localPosition = new Vector3(Mathf.Clamp(ChangeinPosX,-RangeX,RangeX), Mathf.Clamp(ChangeinPosY,-RangeY,RangeY), transform.localPosition.z);
     }
+
 }
