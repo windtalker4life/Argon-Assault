@@ -15,11 +15,11 @@ public class SceneLoader : MonoBehaviour
     // Need to add GUI later
     void Update()
     {
-        Invoke("NewMethod", 2f);
+        Invoke("LevelLoader", 2f);
     }
 
-    private static void NewMethod()
+    private void LevelLoader()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

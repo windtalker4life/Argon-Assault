@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class NewBehaviourScript : MonoBehaviour
+public class Soundtrack : MonoBehaviour
 {
     public static AudioSource audioSource;
     enum Button { PlayGame, Options, Exit, LevelSelect }
@@ -12,18 +12,5 @@ public class NewBehaviourScript : MonoBehaviour
         DontDestroyOnLoad(transform.gameObject);
         audioSource = GetComponent<AudioSource>();
         audioSource.Play();
-    }
-    void Start()
-    {
-        Invoke("Game",2f);
-    }
-
-    private void Game()
-    {
-        SceneManager.LoadScene(1);
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        
     }
 }
