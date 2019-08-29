@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     float HorizontalMovementX;
     Collider colliderPlayer;
     [SerializeField] GameObject deathfx;
+    [SerializeField] Transform parent;
     enum PlayerState{dead,alive}
     PlayerState Ship = PlayerState.alive;
     // Start is called before the first frame update
@@ -80,6 +81,8 @@ public class Player : MonoBehaviour
         print("Out of Health");
 
         deathfx.SetActive(true);
+        GameObject playerexplosion = Instantiate(deathfx, transform.position, Quaternion.identity);
+        playerexplosion.transform.parent = parent;
         Invoke("Level1", 1f);
     }
 
